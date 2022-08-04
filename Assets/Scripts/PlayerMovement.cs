@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody rbShip;
     public GameObject player;
     public float rotationSpeed;
+    public float dashVelocity;
     
     void Start()
     {
@@ -20,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
     {
         ConstantMovement();
         ShipRotation();
+        Dash();
     }
 
     public void ConstantMovement() //Método para mover la nave constantemente si es que es verdadero el bool "constantMoving".
@@ -46,6 +48,15 @@ public class PlayerMovement : MonoBehaviour
         if (Input.GetKey("right"))
         {
             player.transform.Rotate(Vector3.up * rotationSpeed * Time.deltaTime);
+        }
+    }
+
+    public void Dash()
+    {
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            rbShip.velocity = transform.forward * dashVelocity;
+            
         }
     }
 }

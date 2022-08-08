@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public bool constantMoving; //Variable que permite activar o desactivar el movimiento constante de la nave.
-    public float shipVelocity; //Variable que nos permite modificar la velocidad en que se mueve la nave.
-    public Rigidbody rbShip;
-    public GameObject player;
-    public float rotationSpeed;
-    public float dashVelocity;
+    public bool constantMoving; // Variable que permite activar o desactivar el movimiento constante del jugador.
+    public float shipVelocity; // Variable que nos permite modificar la velocidad en que se mueve el jugador.
+    public Rigidbody rbShip; // Variable que contiene el Rigidbody del jugador.
+    public GameObject player; // Variable que contiene el GameObject del jugador.
+    public float rotationSpeed; // Variable que contiene la velocidad de rotaci贸n del jugador.
+    public float dashVelocity; // Variable que contiene la velocidad de Dash del jugador.
     
     void Start()
     {
@@ -19,16 +19,19 @@ public class PlayerMovement : MonoBehaviour
     
     void Update()
     {
+        // Actualizaci贸n que llama a la funci贸n ConstantMovement.
         ConstantMovement();
+        // Actualizaci贸n que llama a la funci贸n ShipRotation.
         ShipRotation();
+        // Actualizaci贸n que llama a la funci贸n Dash.
         Dash();
     }
 
-    public void ConstantMovement() //M閠odo para mover la nave constantemente si es que es verdadero el bool "constantMoving".
+    // Funci贸n para mover al jugador constantemente si es que es verdadero el bool "constantMoving". Si el bool es falso, el jugador se detiene.
+    public void ConstantMovement() 
     {
         if (constantMoving)
         {
-            // rbShip.AddForce(new Vector3(shipVelocity * Time.deltaTime, 0, 0));
             rbShip.velocity = transform.forward * shipVelocity;
         }
 
@@ -38,7 +41,8 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    public void ShipRotation() //M閠odo para rotar la nave en sentido horario y antihorario.
+    // Funci贸n para rotar al jugador en sentido horario y antihorario.
+    public void ShipRotation() 
     {
         if (Input.GetKey("left"))
         {
@@ -51,6 +55,7 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    // Funci贸n para incrementar la velocidad del jugador brevemente usando la tecla "Z".
     public void Dash()
     {
         if (Input.GetKeyDown(KeyCode.Z))

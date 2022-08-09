@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: ff2b05d438d40ff4c92358a646225c2b
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Spooky Cat
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 91548f6605068ad42b54f6e01d90a630, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

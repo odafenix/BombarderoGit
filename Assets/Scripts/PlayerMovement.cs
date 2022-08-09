@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     public GameObject player; // Variable que contiene el GameObject del jugador.
     public float rotationSpeed; // Variable que contiene la velocidad de rotación del jugador.
     public float dashVelocity; // Variable que contiene la velocidad de Dash del jugador.
+    public GameManager gm; 
     
     void Start()
     {
@@ -63,5 +64,16 @@ public class PlayerMovement : MonoBehaviour
             rbShip.velocity = transform.forward * dashVelocity;
             
         }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Killzone")
+        {
+            gm.SubtractLives();
+            player.transform.position = new Vector3 (0,4.5f,0);
+            
+        }
+
     }
 }

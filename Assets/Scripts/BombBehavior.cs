@@ -24,6 +24,7 @@ public class BombBehavior : MonoBehaviour
         if (other.gameObject.tag == "Destructible")
         {
             gm.AddCoins();
+            gm.AddObjectives();
             Destroy(other.gameObject);
             Destroy(gameObject); 
             

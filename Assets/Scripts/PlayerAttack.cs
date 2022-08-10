@@ -32,7 +32,7 @@ public class PlayerAttack : MonoBehaviour
             bomb.velocity = transform.TransformDirection(Vector3.forward * speedBomb);
             gm.SubtractAmmo();
 
-            GameplayUIManager.Instance.IncreasePlayerScore(1);
+            //GameplayUIManager.Instance.IncreasePlayerScore(1);
         }
     }
 }

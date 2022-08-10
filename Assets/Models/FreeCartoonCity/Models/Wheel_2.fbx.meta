@@ -1,80 +1,8 @@
 fileFormatVersion: 2
-guid: 46a7a0c56aca4564e859de7db4440965
+guid: 40733da1be9808c41bd26ddd542a12fc
 ModelImporter:
-  serializedVersion: 19301
+  serializedVersion: 21300
   internalIDToNameTable:
-  - first:
-      74: -3536274748261011574
-    second: Cylinder.007|BeamAction
-  - first:
-      74: -6432791210832177270
-    second: Cylinder.007|Cube.001Action
-  - first:
-      74: -6751646865706087228
-    second: Cylinder.007|Cube.001Action.001
-  - first:
-      74: 3883379836111173253
-    second: Cylinder.007|Cube.001Action.002
-  - first:
-      74: 1669091083839771265
-    second: Cylinder.007|Cube.001Action.003
-  - first:
-      74: -1802804670533804624
-    second: Cylinder.007|CubeAction
-  - first:
-      74: 6383907419916802543
-    second: Cylinder.007|Cylinder.001Action
-  - first:
-      74: 5453263728197712616
-    second: Cylinder.007|Cylinder.002Action
-  - first:
-      74: 3084744291132632565
-    second: Cylinder.007|Cylinder.003Action
-  - first:
-      74: 6618985373740156742
-    second: Cylinder.007|Cylinder.004Action
-  - first:
-      74: 5746172888035176245
-    second: Cylinder.007|Cylinder.005Action
-  - first:
-      74: 2380824911885758102
-    second: Cylinder.007|Cylinder.006Action
-  - first:
-      74: -203420807171948908
-    second: Cylinder.007|Cylinder.007Action
-  - first:
-      74: 1094779659809409219
-    second: Cylinder.007|Cylinder.007Action.001
-  - first:
-      74: -3372678005510141681
-    second: Cylinder.007|Cylinder.008Action
-  - first:
-      74: -2139760807322460260
-    second: Cylinder.007|Cylinder.009Action
-  - first:
-      74: 5288401976719273780
-    second: Cylinder.007|Cylinder.010Action
-  - first:
-      74: 5013430844199243374
-    second: Cylinder.007|Cylinder.011Action
-  - first:
-      74: 5129691464255190923
-    second: Cylinder.007|CylinderAction
-  - first:
-      74: -2411530212317584235
-    second: Cylinder.007|EmptyAction
-  - first:
-      74: 8162831744330617325
-    second: Cylinder.007|FlyingSaucer_ColliderAction
-  - first:
-      74: 8278442126895493083
-    second: Cylinder.007|FlyingSaucerAction
-  - first:
-      74: 357950262141135271
-    second: Cylinder.007|SphereAction
-  - first:
-      74: -4570462221499811425
-    second: Cylinder.007|TorusAction
   - first:
       74: 3005039128818959828
     second: Wheel|BeamAction
@@ -98,7 +26,7 @@ ModelImporter:
     second: Wheel|TorusAction
   externalObjects: {}
   materials:
-    materialImportMode: 1
+    materialImportMode: 2
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -107,6 +35,7 @@ ModelImporter:
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
+    removeConstantScaleCurves: 1
     motionNodeName: 
     rigImportErrors: 
     rigImportWarnings: 
@@ -136,23 +65,29 @@ ModelImporter:
     importBlendShapes: 1
     importCameras: 1
     importLights: 1
+    nodeNameCollisionStrategy: 1
     fileIdsGeneration: 2
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
     keepQuads: 0
     weldVertices: 1
+    bakeAxisConversion: 0
     preserveHierarchy: 0
     skinWeightsMode: 0
     maxBonesPerVertex: 4
     minBoneWeight: 0.001
+    optimizeBones: 1
     meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
-    useFileScale: 0
+    useFileScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
@@ -184,6 +119,8 @@ ModelImporter:
   animationType: 2
   humanoidOversampling: 1
   avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  remapMaterialsIfMaterialImportModeIsNone: 0
   additionalBone: 0
   userData: 
   assetBundleName: 

@@ -18,4 +18,9 @@ public class MainMenuSceneController : MonoBehaviour
     {
         GameSceneManager.Instance.ExitGame();
     }
+
+    public void GoToMainMenuAction()
+    {
+        GameSceneManager.Instance.MainMenu();
+    }
 }

@@ -157,27 +157,27 @@ public class GameManager : MonoBehaviour
         pm.constantMoving = true;
     }
 
+
+    // disparo con presuncion de trayectoria
+    // vel bala = 5/s
+    // ultimaPosicionObjetivo = 0.0.0
+    // nuevaPosicionObjetivo = player.transform.position;
+    // direccion del objetivo = (posicion actual - posicion frame anterior);
+    // velocidad objetivo = (posicion actual - posicion frame anterior).magnitud = vel/frame
+    // cuanto tarda bala en llegar a posicion actual = 2s
+    // posicion del objetivo en 2s => (velocidad objetivo * direccion objetivo * 2s) + posicion actual
+    // disparar a posicion del objetivo en 2 segundos
     
-
-    public void Credits()
+    public void ShowMessageIn5Seconds()
     {
-        SceneManager.LoadScene("Credits");
+        Invoke(nameof(MostrarMensaje),5);
     }
 
-    public void MainMenu()
+    public void MostrarMensaje()
     {
-        SceneManager.LoadScene("MainMenu");
+        UnityEngine.Debug.Log("Mensaje");
     }
-
-    public void Gameplay()
-    {
-        SceneManager.LoadScene("Gameplay");
-    }
-
-    public void ExitGame()
-    {
-      Application.Quit();
-    }
+    
     public void GameOver()
     {
         if (livesCounter <= 0)
@@ -197,7 +197,4 @@ public class GameManager : MonoBehaviour
         }
 
     }
-
-    
-
 }

@@ -11,10 +11,13 @@ public class PlayerMovement : MonoBehaviour
     public float rotationSpeed; // Variable que contiene la velocidad de rotación del jugador.
     public float dashVelocity; // Variable que contiene la velocidad de Dash del jugador.
     public GameManager gm; 
-    
+
+    private float currentShipVelocity;
+    private bool isDashing;
+
     void Start()
     {
-        
+        currentShipVelocity = shipVelocity;
     }
 
     
@@ -33,7 +36,7 @@ public class PlayerMovement : MonoBehaviour
     {
         if (constantMoving)
         {
-            rbShip.velocity = transform.forward * shipVelocity;
+            rbShip.velocity = transform.forward * currentShipVelocity;
         }
 
         else
@@ -59,11 +62,32 @@ public class PlayerMovement : MonoBehaviour
     // Función para incrementar la velocidad del jugador brevemente usando la tecla "Z".
     public void Dash()
     {
-        if (Input.GetKeyDown(KeyCode.Z))
+        if (Input.GetKeyDown(KeyCode.Z) && !isDashing)
         {
-            rbShip.velocity = transform.forward * dashVelocity;
-            
+            StartCoroutine(DashCoroutine());
         }
+    }
+
+    private IEnumerator DashCoroutine()
+    {
+        isDashing = true;
+        
+        while(currentShipVelocity < shipVelocity * 2)
+        {
+            currentShipVelocity += 0.5f;
+            yield return null;
+        }
+
+        // esperar X segundos y luego volver a velocidad normal
+        yield return new WaitForSeconds(3f);
+
+        while(currentShipVelocity > shipVelocity)
+        {
+            currentShipVelocity -= 0.3f;
+            yield return null;
+        }
+
+        isDashing = false;
     }
 
     private void OnTriggerEnter(Collider other)

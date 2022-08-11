@@ -5,6 +5,7 @@ using UnityEngine;
 [ExecuteInEditMode]
 public class CameraController : MonoBehaviour
 {
+    [Header ("Positions")]
     public Transform cameraPosition; // Variable que indica el valor Transform de la cámara principal.      
     public Transform playerPosition; // Variable que indica el valor Transform del jugador.  
 

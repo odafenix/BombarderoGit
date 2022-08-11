@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
+    [Header ("Bomb Atributes")]
     public GameObject spawnerBomb; // Variable que contiene el GameObject pivote de spawn de las bombas.
     public GameObject prefabBomb; // Variable que contiene el GameObject prefab de bombas.
     public Rigidbody rbPrefabBomb; // Variable que contiene el Rigidbody del prefab de bombas.
     public float speedBomb; // Variable que contiene la velocidad del lanzamiento de bombas.
+    [Header ("GameManager")]
     public GameManager gm; // Variable que nos permite acceder a la clase GameManager.
 
     void Start()

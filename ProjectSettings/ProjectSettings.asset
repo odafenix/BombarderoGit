@@ -889,11 +889,11 @@ PlayerSettings:
     m_VersionName: 
   apiCompatibilityLevel: 6
   activeInputHandler: 0
-  cloudProjectId: 
+  cloudProjectId: f51a6c0f-a96a-4fbc-a10f-a31a1de876be
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: 
-  organizationId: 
+  projectName: 101 Proyecto Final - Bomber
+  organizationId: injoat
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   playerDataPath: 

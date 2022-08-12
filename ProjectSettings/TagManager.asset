@@ -7,6 +7,7 @@ TagManager:
   - Destructible
   - GM
   - Killzone
+  - Bullet
   layers:
   - Default
   - TransparentFX

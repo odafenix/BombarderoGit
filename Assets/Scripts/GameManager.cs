@@ -14,23 +14,28 @@ public class GameManager : MonoBehaviour
     public TMP_Text lives; // Texto que indica la cantidad de vidas en el canvas.
     public TMP_Text coins; // Texto que indica la cantidad de monedas en el canvas.
     public TMP_Text objectives; // Texto que indica la cantidad de objetivos a destruir en el canvas.
+
     [Header ("UI Counters")]
     public int ammoCounter; // Variable que contiene la cantidad de munición.
     public int coinsCounter; // Variable que contiene la cantidad de monedas.
     public int livesCounter; // Variable que contiene la cantidad de vidas.
     public int objectivesCounter; // Variable que contiene la cantidad de objetivos destruidos.
+
     [Header ("UI Max Counters")]
     public int ammoPackage; // Variable que contiene la cantidad de munición que se puede comprar, o, conseguir.
     public int maxAmmo; // Variable que indica el valor máximo de munición.
     public int maxLives; // Variable que indica el valor máximo de vidas.
     public int maxObjectives; // Variable que indica el valor máximo de objetivos a destruir.
+
     [Header ("UI Values")]
     public int ammoValue; // Variable que indica el precio de compra de munición.
     public int livesValue; // Variable que indica el precio de compra de vidas.
+
     [Header ("UI GameObjects")]
     public GameObject soldOutAmmo; // GameObject que contiene la imagen SoldOut de munición.
     public GameObject soldOutLives; // GameObject que contiene la imagen SoldOut de vidas.
     public GameObject noCoinsPopup; // GameObkect que contiene el botón de NoCoinsPopup.
+
     [Header ("Scripts")]
     public PlayerMovement pm; 
 
@@ -157,17 +162,7 @@ public class GameManager : MonoBehaviour
         pm.constantMoving = true;
     }
 
-
-    // disparo con presuncion de trayectoria
-    // vel bala = 5/s
-    // ultimaPosicionObjetivo = 0.0.0
-    // nuevaPosicionObjetivo = player.transform.position;
-    // direccion del objetivo = (posicion actual - posicion frame anterior);
-    // velocidad objetivo = (posicion actual - posicion frame anterior).magnitud = vel/frame
-    // cuanto tarda bala en llegar a posicion actual = 2s
-    // posicion del objetivo en 2s => (velocidad objetivo * direccion objetivo * 2s) + posicion actual
-    // disparar a posicion del objetivo en 2 segundos
-    
+         
     public void ShowMessageIn5Seconds()
     {
         Invoke(nameof(MostrarMensaje),5);

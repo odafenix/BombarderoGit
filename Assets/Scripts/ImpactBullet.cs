@@ -5,11 +5,17 @@ using UnityEngine;
 public class ImpactBullet : MonoBehaviour
 {
     GameManager gm;
+    Shake shake;
+    
+
+
     // Start is called before the first frame update
     void Start()
     {
         // Función que asigna a la variable "gm" el componente GameManager.
         gm = GameObject.FindGameObjectWithTag("GM").GetComponent<GameManager>();
+        shake = GameObject.FindGameObjectWithTag("Shake").GetComponent<Shake>();
+
     }
 
     // Update is called once per frame
@@ -24,7 +30,7 @@ public class ImpactBullet : MonoBehaviour
         if (other.gameObject.tag == "Player")
         {
             gm.SubtractLives();
-            //camerashake            
+            shake.StartCoroutine("CameraShake");
             Destroy(gameObject);
 
         }
@@ -35,4 +41,6 @@ public class ImpactBullet : MonoBehaviour
         }*/
 
     }
+
+    
 }

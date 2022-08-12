@@ -162,7 +162,7 @@ public class GameManager : MonoBehaviour
         pm.constantMoving = true;
     }
 
-         
+        //NO CORRUTINA 
     public void ShowMessageIn5Seconds()
     {
         Invoke(nameof(MostrarMensaje),5);
@@ -173,6 +173,8 @@ public class GameManager : MonoBehaviour
         UnityEngine.Debug.Log("Mensaje");
     }
     
+
+    //AAAA
     public void GameOver()
     {
         if (livesCounter <= 0)
@@ -183,6 +185,7 @@ public class GameManager : MonoBehaviour
         
     }
 
+     //AAA
      public void Victory()
     {
         if (objectivesCounter >= maxObjectives)

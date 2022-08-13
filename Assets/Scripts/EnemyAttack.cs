@@ -25,7 +25,7 @@ public class EnemyAttack : MonoBehaviour
     
     void Update()
     {
-        //Que dispare al player cuando está en su rango de visión
+        //Que dispare al player cuando estï¿½ en su rango de visiï¿½n
         playerDistance = Vector2.Distance(target.position, enemy.position);
         if (playerDistance < visionRange)
         {
@@ -44,20 +44,20 @@ public class EnemyAttack : MonoBehaviour
 
 
         
-        // Función para que la torreta siga la posición del jugador.
+        // Funciï¿½n para que la torreta siga la posiciï¿½n del jugador.
         transform.LookAt(target);
 
 
     }
 
 
-    // Función que hace que se instancie la bala y salga disparada en dirección al jugador.
+    // Funciï¿½n que hace que se instancie la bala y salga disparada en direcciï¿½n al jugador.
     private void Shoot()
     {
         balaClon = Instantiate(bullet, spawner.GetComponent<Transform>().position, Quaternion.identity);        
         balaClon.GetComponent<Rigidbody>().velocity = transform.forward * forceBullet;
         balaClon.transform.LookAt(target);
-
+        UnityGamingServices.AnalyticsManager.RegistrarDanioJugador(1, this.gameObject.name);
     }
 
     

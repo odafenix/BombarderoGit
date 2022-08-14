@@ -4,6 +4,7 @@ using Unity.Services.Analytics;
 using Unity.Services.Authentication;
 using Unity.Services.Core;
 using Unity.Services.Core.Analytics;
+using Unity.Services.Core.Environments;
 using UnityEngine;
 
 namespace UnityGamingServices
@@ -30,10 +31,10 @@ namespace UnityGamingServices
             InitializeAsync();
         }
 
-        /// <summary>
-        /// https://docs.unity3d.com/Packages/com.unity.remote-config@3.1/manual/CodeIntegration.html
-        /// https://docs.unity.com/analytics/AnalyticsSDKGuide.html
-        /// </summary>
+        // Usando referencias de:
+        // https://docs.unity3d.com/Packages/com.unity.remote-config@3.1/manual/CodeIntegration.html
+        // https://docs.unity.com/analytics/AnalyticsSDKGuide.html
+
         private async void InitializeAsync()
         {
             try
@@ -57,9 +58,10 @@ namespace UnityGamingServices
             }                           
         }
 
-        /// <summary>
-        /// https://docs.unity3d.com/Packages/com.unity.remote-config@3.1/manual/CodeIntegration.html
-        /// </summary>
+        // Usando referencias de:
+        // https://docs.unity3d.com/Packages/com.unity.remote-config@3.1/manual/CodeIntegration.html
+        
+
         private async Task TryLogIn()
         {
             if (!AuthenticationService.Instance.IsSignedIn)

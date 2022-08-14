@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 469c24fdb3bd6431b92cc1465bd9166b, type: 3}
+  m_Name: RemoteConfigDataStoreAsset
+  m_EditorClassIdentifier: 
+  _rsKeyList: "[\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"10b02180-72c9-4565-83c6-a4d7c51b7a21\"\r\n   
+    },\r\n    \"rs\": {\r\n      \"key\": \"maxLives\",\r\n      \"type\": \"int\",\r\n     
+    \"value\": 10\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
+    \"25d816e4-2882-41b3-82d5-efa99b2061d5\"\r\n    },\r\n    \"rs\": {\r\n     
+    \"key\": \"currentLives\",\r\n      \"type\": \"int\",\r\n      \"value\": 5\r\n   
+    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"b298c4a9-4496-4fb7-aa0b-49a69bc07179\"\r\n   
+    },\r\n    \"rs\": {\r\n      \"key\": \"maxAmmo\",\r\n      \"type\": \"int\",\r\n     
+    \"value\": 99\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
+    \"529e744d-30f6-47fe-9326-b540ce2892aa\"\r\n    },\r\n    \"rs\": {\r\n     
+    \"key\": \"currentAmmo\",\r\n      \"type\": \"int\",\r\n      \"value\": 25\r\n   
+    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"90df4d41-d31b-4750-94fe-3d93785867cf\"\r\n   
+    },\r\n    \"rs\": {\r\n      \"key\": \"isShopActive\",\r\n      \"type\": \"bool\",\r\n     
+    \"value\": true\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
+    \"2fa0196b-2e6b-4aca-b7ce-d6f4e0ce743c\"\r\n    },\r\n    \"rs\": {\r\n     
+    \"key\": \"isLivesShopActive\",\r\n      \"type\": \"bool\",\r\n      \"value\":
+    false\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"3f3f0532-5e7b-4d3a-9813-b40babefec10\"\r\n   
+    },\r\n    \"rs\": {\r\n      \"key\": \"isAmmoShopActive\",\r\n      \"type\":
+    \"bool\",\r\n      \"value\": false\r\n    }\r\n  }\r\n]"
+  _rsLastCachedKeyList: "[\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"10b02180-72c9-4565-83c6-a4d7c51b7a21\"\r\n   
+    },\r\n    \"rs\": {\r\n      \"key\": \"maxLives\",\r\n      \"type\": \"int\",\r\n     
+    \"value\": 10\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
+    \"25d816e4-2882-41b3-82d5-efa99b2061d5\"\r\n    },\r\n    \"rs\": {\r\n     
+    \"key\": \"currentLives\",\r\n      \"type\": \"int\",\r\n      \"value\": 5\r\n   
+    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"b298c4a9-4496-4fb7-aa0b-49a69bc07179\"\r\n   
+    },\r\n    \"rs\": {\r\n      \"key\": \"maxAmmo\",\r\n      \"type\": \"int\",\r\n     
+    \"value\": 99\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
+    \"529e744d-30f6-47fe-9326-b540ce2892aa\"\r\n    },\r\n    \"rs\": {\r\n     
+    \"key\": \"currentAmmo\",\r\n      \"type\": \"int\",\r\n      \"value\": 25\r\n   
+    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"90df4d41-d31b-4750-94fe-3d93785867cf\"\r\n   
+    },\r\n    \"rs\": {\r\n      \"key\": \"isShopActive\",\r\n      \"type\": \"bool\",\r\n     
+    \"value\": true\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
+    \"2fa0196b-2e6b-4aca-b7ce-d6f4e0ce743c\"\r\n    },\r\n    \"rs\": {\r\n     
+    \"key\": \"isLivesShopActive\",\r\n      \"type\": \"bool\",\r\n      \"value\":
+    false\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"3f3f0532-5e7b-4d3a-9813-b40babefec10\"\r\n   
+    },\r\n    \"rs\": {\r\n      \"key\": \"isAmmoShopActive\",\r\n      \"type\":
+    \"bool\",\r\n      \"value\": false\r\n    }\r\n  }\r\n]"
+  _environments: "[\r\n  {\r\n    \"projectId\": \"f51a6c0f-a96a-4fbc-a10f-a31a1de876be\",\r\n   
+    \"name\": \"production\",\r\n    \"id\": \"0868422f-49e1-457d-853f-3eac8b9c27e0\",\r\n   
+    \"isDefault\": true,\r\n    \"createdAt\": \"2022-08-12T14:49:31Z\",\r\n    \"updatedAt\":
+    \"2022-08-12T14:49:31Z\"\r\n  }\r\n]"

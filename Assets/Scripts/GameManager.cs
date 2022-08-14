@@ -6,6 +6,8 @@ using TMPro;
 using System;
 using UnityEngine.SceneManagement;
 
+using UnityGamingServices;
+
 
 public class GameManager : MonoBehaviour
 {
@@ -34,15 +36,44 @@ public class GameManager : MonoBehaviour
     [Header ("UI GameObjects")]
     public GameObject soldOutAmmo; // GameObject que contiene la imagen SoldOut de munición.
     public GameObject soldOutLives; // GameObject que contiene la imagen SoldOut de vidas.
-    public GameObject noCoinsPopup; // GameObkect que contiene el botón de NoCoinsPopup.
+    public GameObject noCoinsPopup; // GameObject que contiene el botón de NoCoinsPopup.
+    public GameObject shopButton; // GameObject que contiene el botón de ShopButton.
+    public GameObject livesButton; // GameObject que contiene el botón de ShopButton.
+    public GameObject ammoButton; // GameObject que contiene el botón de ShopButton.
 
     [Header ("Scripts")]
-    public PlayerMovement pm; 
+    public PlayerMovement pm;
+    public bool isShopActive;
+    public bool isLivesShopActive; 
+    public bool isAmmoShopActive;  
 
-    void Start()
-    {
+    private async void Start()
+        {
+
+
+            await TaskUtils.WaitUntil(()=>RemoteSettingsManager.IsReady);
+            maxLives = RemoteSettingsManager.GetConfig(RemoteSettingsConstants.MaxLives, maxLives);
+
+            await TaskUtils.WaitUntil(()=>RemoteSettingsManager.IsReady);
+            livesCounter = RemoteSettingsManager.GetConfig(RemoteSettingsConstants.CurrentLives, livesCounter);
+
+            await TaskUtils.WaitUntil(()=>RemoteSettingsManager.IsReady);
+            maxAmmo = RemoteSettingsManager.GetConfig(RemoteSettingsConstants.MaxAmmo, maxAmmo);
+
+            await TaskUtils.WaitUntil(()=>RemoteSettingsManager.IsReady);
+            ammoCounter = RemoteSettingsManager.GetConfig(RemoteSettingsConstants.CurrentAmmo, ammoCounter);
+
+            await TaskUtils.WaitUntil(()=>RemoteSettingsManager.IsReady);
+            isShopActive = RemoteSettingsManager.GetConfig(RemoteSettingsConstants.IsShopActive, isShopActive);
+
+            await TaskUtils.WaitUntil(()=>RemoteSettingsManager.IsReady);
+            isLivesShopActive = RemoteSettingsManager.GetConfig(RemoteSettingsConstants.IsLivesShopActive, isLivesShopActive);
+
+            await TaskUtils.WaitUntil(()=>RemoteSettingsManager.IsReady);
+            isAmmoShopActive = RemoteSettingsManager.GetConfig(RemoteSettingsConstants.IsAmmoShopActive, isAmmoShopActive);
+            
         
-    }
+        }
 
     
     void Update()
@@ -52,6 +83,39 @@ public class GameManager : MonoBehaviour
         coins.text = coinsCounter.ToString();
         lives.text = livesCounter.ToString();
         objectives.text = objectivesCounter.ToString() + "/" + maxObjectives.ToString();
+
+
+        if(!isShopActive)
+        {
+           shopButton.SetActive(false);
+        }
+
+        if(isShopActive)
+        {
+           shopButton.SetActive(true);
+        }
+
+        if(!isAmmoShopActive)
+        {
+           ammoButton.SetActive(false);
+        }
+
+        if(isAmmoShopActive)
+        {
+           ammoButton.SetActive(true);
+        }
+
+        if(!isLivesShopActive)
+        {
+           livesButton.SetActive(false);
+        }
+
+        if(isLivesShopActive)
+        {
+           livesButton.SetActive(true);
+        }
+
+        
         
         // Actualización que señala que la imagen de SoldOut de munición se encuentra desactivada cuando la munición máxima se ha alcanzado.
         if (ammoCounter < maxAmmo)
@@ -116,6 +180,7 @@ public class GameManager : MonoBehaviour
         {
         coinsCounter = coinsCounter - ammoValue;
         ammoCounter = ammoCounter + ammoPackage;
+        UnityGamingServices.AnalyticsManager.RegistrarCompraJugador(ammoPackage, "Ammo Package");
         }
         
         
@@ -128,6 +193,7 @@ public class GameManager : MonoBehaviour
        {
        coinsCounter = coinsCounter - livesValue;
        livesCounter = livesCounter + 1;
+       UnityGamingServices.AnalyticsManager.RegistrarCompraJugador(1, "Lives Package");
        }
        
     }
@@ -181,6 +247,7 @@ public class GameManager : MonoBehaviour
         {
           livesCounter = 0;
           SceneManager.LoadScene("GameOver");
+          UnityGamingServices.AnalyticsManager.RegistrarNavegacion("GameOverScreen");
         }
         
     }
@@ -191,8 +258,11 @@ public class GameManager : MonoBehaviour
         if (objectivesCounter >= maxObjectives)
         {
            SceneManager.LoadScene("Victory");
+           UnityGamingServices.AnalyticsManager.RegistrarNavegacion("VictoryScreen");
            objectivesCounter = 0;
         }
 
     }
 }
+
+

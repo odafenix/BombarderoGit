@@ -57,7 +57,7 @@ public class EnemyAttack : MonoBehaviour
         balaClon = Instantiate(bullet, spawner.GetComponent<Transform>().position, Quaternion.identity);        
         balaClon.GetComponent<Rigidbody>().velocity = transform.forward * forceBullet;
         balaClon.transform.LookAt(target);
-        UnityGamingServices.AnalyticsManager.RegistrarDanioJugador(1, this.gameObject.name);
+        
     }
 
     

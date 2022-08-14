@@ -12,7 +12,7 @@ public class ImpactBullet : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // Función que asigna a la variable "gm" el componente GameManager.
+        // Funciï¿½n que asigna a la variable "gm" el componente GameManager.
         gm = GameObject.FindGameObjectWithTag("GM").GetComponent<GameManager>();
         shake = GameObject.FindGameObjectWithTag("Shake").GetComponent<Shake>();
 
@@ -24,7 +24,7 @@ public class ImpactBullet : MonoBehaviour
         
     }
 
-    // Función que detecta la colisión del objeto con otro. Si, el objeto con el que colisiona, tiene el tag "Player", se ejecuta la función "Substract Lives", restándole una vida al jugador .Si no, solo se destruye el objeto portador del código.
+    // Funciï¿½n que detecta la colisiï¿½n del objeto con otro. Si, el objeto con el que colisiona, tiene el tag "Player", se ejecuta la funciï¿½n "Substract Lives", restï¿½ndole una vida al jugador .Si no, solo se destruye el objeto portador del cï¿½digo.
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
@@ -32,13 +32,15 @@ public class ImpactBullet : MonoBehaviour
             gm.SubtractLives();
             shake.StartCoroutine("CameraShake");
             Destroy(gameObject);
+            UnityGamingServices.AnalyticsManager.RegistrarDanioJugador(1, this.gameObject.name);
 
         }
 
-        /*else
+        /*
         {
             Destroy(gameObject);
-        }*/
+        }
+        */
 
     }
 

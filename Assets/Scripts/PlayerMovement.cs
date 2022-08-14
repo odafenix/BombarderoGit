@@ -110,6 +110,7 @@ public class PlayerMovement : MonoBehaviour
         if (other.gameObject.tag == "Killzone")
         {
             gm.SubtractLives();
+            UnityGamingServices.AnalyticsManager.RegistrarDanioJugador(1, "Kilzone");
             player.transform.position = new Vector3 (0,4.5f,0);
             
         }

@@ -22,4 +22,5 @@ public class GameSceneManager : Singleton<GameSceneManager>
     {
       Application.Quit();
     }
+
 }

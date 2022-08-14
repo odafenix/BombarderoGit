@@ -6,6 +6,7 @@ public class BombBehavior : MonoBehaviour
 {
 
  public GameManager gm;   // Variable que nos permite acceder a la clase GameManager.
+ public ParticleSystem particles;
     void Start()
     {
        // Función que asigna a la variable "gm" el componente GameManager.
@@ -25,6 +26,7 @@ public class BombBehavior : MonoBehaviour
         {
             gm.AddCoins();
             gm.AddObjectives();
+            Instantiate(particles, transform.position, Quaternion.identity);
             Destroy(other.gameObject);
             Destroy(gameObject); 
             

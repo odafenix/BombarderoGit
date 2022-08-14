@@ -9,6 +9,7 @@ TagManager:
   - Killzone
   - Bullet
   - Shake
+  - Particles
   layers:
   - Default
   - TransparentFX

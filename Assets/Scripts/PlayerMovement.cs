@@ -17,6 +17,10 @@ public class PlayerMovement : MonoBehaviour
     [Header ("Player's References")]
     public Rigidbody rbShip; // Variable que contiene el Rigidbody del jugador.
     public GameObject player; // Variable que contiene el GameObject del jugador.
+    public GameObject Trails01;
+    public GameObject Trails02;
+    public GameObject TurboTrails01;
+    public GameObject TurboTrails02;
     [Header ("GameManager")]
     public GameManager gm; 
 
@@ -34,6 +38,7 @@ public class PlayerMovement : MonoBehaviour
         ShipRotation();
         // Actualización que llama a la función Dash.
         Dash();
+        DashTrails();
     }
 
     // Función para mover al jugador constantemente si es que es verdadero el bool "constantMoving". Si el bool es falso, el jugador se detiene.
@@ -72,6 +77,24 @@ public class PlayerMovement : MonoBehaviour
             StartCoroutine(DashCoroutine());
             StartCoroutine(DashCooldown());
         }
+    }
+
+    public void DashTrails()
+    {
+       if(isDashing)
+       {
+          //Trails01.SetActive(false);
+          //Trails02.SetActive(false);
+          TurboTrails01.SetActive(true);
+          TurboTrails02.SetActive(true);
+       }
+       if(!isDashing)
+       {
+          //Trails01.SetActive(true);
+          //Trails02.SetActive(true);
+          TurboTrails01.SetActive(false);
+          TurboTrails02.SetActive(false);
+       }
     }
 
     private IEnumerator DashCoroutine()

@@ -36,6 +36,8 @@ public class GameManager : MonoBehaviour
     [Header("UI GameObjects")]
     public GameObject soldOutAmmo; // GameObject que contiene la imagen SoldOut de munición.
     public GameObject soldOutLives; // GameObject que contiene la imagen SoldOut de vidas.
+    public GameObject soldOutExtraWeapon; // GameObject que contiene la imagen SoldOut de extra weapon.
+    public GameObject soldOutSpeedRotation; // GameObject que contiene la imagen SoldOut de speed rotation.
     public GameObject noCoinsPopup; // GameObject que contiene el botón de NoCoinsPopup.
     public GameObject shopButton; // GameObject que contiene el botón de ShopButton.
     public GameObject livesButton; // GameObject que contiene el botón de ShopButton.
@@ -136,6 +138,8 @@ public class GameManager : MonoBehaviour
         {
        soldOutLives.SetActive(false);
         }
+
+
         
         // Actualización que limita el valor de munición maxima a 100 en caso de excederse al comprar.
         if (ammoCounter > 100)
@@ -151,6 +155,16 @@ public class GameManager : MonoBehaviour
         if (livesCounter >= maxLives)
         {
           soldOutLives.SetActive(true);
+        }
+
+        if (!canBuyExtraWeapons)
+        {
+            soldOutExtraWeapon.SetActive(true);
+        }
+
+        if (!canBuyRotation)
+        {
+            soldOutSpeedRotation.SetActive(true);
         }
 
         Victory();
@@ -248,6 +262,24 @@ public class GameManager : MonoBehaviour
         if (coinsCounter < livesValue)
         {
         noCoinsPopup.SetActive(true);
+        }
+    }
+
+    // Función que activa el "popup noCoins" si no tenemos la cantidad de monedas necesarias para comprar extra weapon.
+    public void NoCoinsForExtraWeapon()
+    {
+        if (coinsCounter < 15)
+        {
+            noCoinsPopup.SetActive(true);
+        }
+    }
+
+    // Función que activa el "popup noCoins" si no tenemos la cantidad de monedas necesarias para comprar rotate speed.
+    public void NoCoinsForRotateSpeed()
+    {
+        if (coinsCounter < 10)
+        {
+            noCoinsPopup.SetActive(true);
         }
     }
 

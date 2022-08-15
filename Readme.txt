@@ -1,5 +1,6 @@
 Scripts creados por mí:
 Assets/Scripts/AnalyticsManagerGameEvents.cs
+Assets/Scripts/AudioManager.cs
 Assets/Scripts/BombBehavior.cs
 Assets/Scripts/CameraController.cs
 Assets/Scripts/EnemyAttack.cs
@@ -12,6 +13,7 @@ Assets/Scripts/PlayerAttack.cs
 Assets/Scripts/PlayerMovement.cs
 Assets/Scripts/SimpleSingleton.cs
 Assets/Scripts/Singleton.cs
+Assets/Scripts/ParticlesBehavior.cs
 
 Scripts creados por terceros:
 Assets/Scripts/AnalyticsManager.cs
@@ -19,6 +21,7 @@ Assets/Scripts/UnityServicesManager.cs
 Assets/Scripts/Shake.cs
 Assets/Scripts/TaskUtils.cs
 Assets/Scripts/EnemyBehavior.cs
+Assets/Scripts/OptionsAudio.cs
 
 Scripts creados por terceros, modificados por nosotros:
 Assets/Scripts/RemoteSettingsConstants.cs

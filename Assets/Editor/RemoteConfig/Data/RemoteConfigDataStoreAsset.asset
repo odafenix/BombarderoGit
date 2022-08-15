@@ -12,40 +12,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 469c24fdb3bd6431b92cc1465bd9166b, type: 3}
   m_Name: RemoteConfigDataStoreAsset
   m_EditorClassIdentifier: 
-  _rsKeyList: "[\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"9e0ee41b-23a4-4eff-8519-08d8470e6dea\"\r\n   
+  _rsKeyList: "[\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"35518655-2b33-4256-a43e-8d2d46868a8a\"\r\n   
     },\r\n    \"rs\": {\r\n      \"key\": \"maxLives\",\r\n      \"type\": \"int\",\r\n     
     \"value\": 10\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
-    \"08ffb9f4-7ae1-4158-ab78-99fcb84722f1\"\r\n    },\r\n    \"rs\": {\r\n     
+    \"106c7ee2-c573-4e79-b01f-86667cad6670\"\r\n    },\r\n    \"rs\": {\r\n     
     \"key\": \"currentLives\",\r\n      \"type\": \"int\",\r\n      \"value\": 5\r\n   
-    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"d7d6af6b-5a46-45aa-8078-5b94cb94f32e\"\r\n   
+    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"0dadc573-cd04-4938-82d1-cd920bbc83e9\"\r\n   
     },\r\n    \"rs\": {\r\n      \"key\": \"maxAmmo\",\r\n      \"type\": \"int\",\r\n     
     \"value\": 99\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
-    \"a50f40cb-bf0e-4ded-a1e7-ab5501714e99\"\r\n    },\r\n    \"rs\": {\r\n     
+    \"b0273775-0256-4a4d-a8e4-440dbcf0773e\"\r\n    },\r\n    \"rs\": {\r\n     
     \"key\": \"currentAmmo\",\r\n      \"type\": \"int\",\r\n      \"value\": 25\r\n   
-    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"4be98b07-4d29-46b2-8763-a5e6312fd7e4\"\r\n   
+    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"0c594a6d-d447-478f-bc08-4a5ca079251d\"\r\n   
     },\r\n    \"rs\": {\r\n      \"key\": \"isShopActive\",\r\n      \"type\": \"bool\",\r\n     
     \"value\": true\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
-    \"1dca59c6-142b-444d-aba2-164e47a94ee5\"\r\n    },\r\n    \"rs\": {\r\n     
+    \"bcc188a3-a321-4b4c-b075-65fd552ec76b\"\r\n    },\r\n    \"rs\": {\r\n     
     \"key\": \"isLivesShopActive\",\r\n      \"type\": \"bool\",\r\n      \"value\":
-    true\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"e59ed7ec-2d17-4742-9766-aafe8e5a493c\"\r\n   
+    true\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"68a9a5ca-16f9-4ea0-8572-ac93563ae18c\"\r\n   
     },\r\n    \"rs\": {\r\n      \"key\": \"isAmmoShopActive\",\r\n      \"type\":
     \"bool\",\r\n      \"value\": true\r\n    }\r\n  }\r\n]"
-  _rsLastCachedKeyList: "[\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"9e0ee41b-23a4-4eff-8519-08d8470e6dea\"\r\n   
+  _rsLastCachedKeyList: "[\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"35518655-2b33-4256-a43e-8d2d46868a8a\"\r\n   
     },\r\n    \"rs\": {\r\n      \"key\": \"maxLives\",\r\n      \"type\": \"int\",\r\n     
     \"value\": 10\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
-    \"08ffb9f4-7ae1-4158-ab78-99fcb84722f1\"\r\n    },\r\n    \"rs\": {\r\n     
+    \"106c7ee2-c573-4e79-b01f-86667cad6670\"\r\n    },\r\n    \"rs\": {\r\n     
     \"key\": \"currentLives\",\r\n      \"type\": \"int\",\r\n      \"value\": 5\r\n   
-    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"d7d6af6b-5a46-45aa-8078-5b94cb94f32e\"\r\n   
+    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"0dadc573-cd04-4938-82d1-cd920bbc83e9\"\r\n   
     },\r\n    \"rs\": {\r\n      \"key\": \"maxAmmo\",\r\n      \"type\": \"int\",\r\n     
     \"value\": 99\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
-    \"a50f40cb-bf0e-4ded-a1e7-ab5501714e99\"\r\n    },\r\n    \"rs\": {\r\n     
+    \"b0273775-0256-4a4d-a8e4-440dbcf0773e\"\r\n    },\r\n    \"rs\": {\r\n     
     \"key\": \"currentAmmo\",\r\n      \"type\": \"int\",\r\n      \"value\": 25\r\n   
-    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"4be98b07-4d29-46b2-8763-a5e6312fd7e4\"\r\n   
+    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"0c594a6d-d447-478f-bc08-4a5ca079251d\"\r\n   
     },\r\n    \"rs\": {\r\n      \"key\": \"isShopActive\",\r\n      \"type\": \"bool\",\r\n     
     \"value\": true\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\":
-    \"1dca59c6-142b-444d-aba2-164e47a94ee5\"\r\n    },\r\n    \"rs\": {\r\n     
+    \"bcc188a3-a321-4b4c-b075-65fd552ec76b\"\r\n    },\r\n    \"rs\": {\r\n     
     \"key\": \"isLivesShopActive\",\r\n      \"type\": \"bool\",\r\n      \"value\":
-    true\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"e59ed7ec-2d17-4742-9766-aafe8e5a493c\"\r\n   
+    true\r\n    }\r\n  },\r\n  {\r\n    \"metadata\": {\r\n      \"entityId\": \"68a9a5ca-16f9-4ea0-8572-ac93563ae18c\"\r\n   
     },\r\n    \"rs\": {\r\n      \"key\": \"isAmmoShopActive\",\r\n      \"type\":
     \"bool\",\r\n      \"value\": true\r\n    }\r\n  }\r\n]"
   _environments: "[\r\n  {\r\n    \"projectId\": \"f51a6c0f-a96a-4fbc-a10f-a31a1de876be\",\r\n   

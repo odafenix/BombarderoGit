@@ -44,16 +44,20 @@ public class GameManager : MonoBehaviour
     [Header("Scripts")]
     public PlayerMovement pm; // Variable que nos permite acceder a la clase PlayerMovement.
     public AudioManager am; // Variable que nos permite acceder a la clase AudioManager.
+    public PlayerAttack pa;
 
+    [Header("Bools")]
     public bool isShopActive;
     public bool isLivesShopActive; 
     public bool isAmmoShopActive;  
+    public bool canBuyRotation; 
+    public bool canBuyExtraWeapons;
 
 
     private async void Start()
         {
 
-
+            // Variables de remote settings.
             await TaskUtils.WaitUntil(()=>RemoteSettingsManager.IsReady);
             maxLives = RemoteSettingsManager.GetConfig(RemoteSettingsConstants.MaxLives, maxLives);
 
@@ -88,6 +92,7 @@ public class GameManager : MonoBehaviour
         objectives.text = objectivesCounter.ToString() + "/" + maxObjectives.ToString();
 
 
+        // Actualización de iconos de la tienda.
         if(!isShopActive)
         {
            shopButton.SetActive(false);
@@ -159,6 +164,7 @@ public class GameManager : MonoBehaviour
         ammoCounter = ammoCounter - 1;
     }
 
+    // Función que sustrae vidas al contador de vidas.
     public void SubtractLives()
     {
         livesCounter = livesCounter - 1;
@@ -195,11 +201,36 @@ public class GameManager : MonoBehaviour
     {
        if (livesCounter < maxLives && coinsCounter >= livesValue)
        {
+       am.PlayBuy(); // Audio Buy
        coinsCounter = coinsCounter - livesValue;
        livesCounter = livesCounter + 1;
        UnityGamingServices.AnalyticsManager.RegistrarCompraJugador(1, "Lives Package");
        }
        
+    }
+
+    // Función que incrementa la velocidad de rotación.
+    public void AddRotationSpeed()
+    {
+        if (canBuyRotation && coinsCounter >= 10)
+        {
+        am.PlayBuy(); // Audio Buy
+        coinsCounter = coinsCounter - 10;
+        pm.rotationSpeed = 150f;
+        canBuyRotation = false;
+        } 
+    }
+
+    // Función que incrementa la cantidad de armas.
+    public void AddExtraWeapons()
+    {
+        if (canBuyExtraWeapons && coinsCounter >= 15)
+        {
+        am.PlayBuy(); // Audio Buy
+        coinsCounter = coinsCounter - 15;
+        pa.areExtraWeaponsActive = true;
+        canBuyExtraWeapons = false;
+        } 
     }
 
     // Función que activa el "popup noCoins" si no tenemos la cantidad de monedas necesarias para comprar munición.
@@ -231,20 +262,8 @@ public class GameManager : MonoBehaviour
     {
         pm.constantMoving = true;
     }
-
-        //NO CORRUTINA 
-    public void ShowMessageIn5Seconds()
-    {
-        Invoke(nameof(MostrarMensaje),5);
-    }
-
-    public void MostrarMensaje()
-    {
-        UnityEngine.Debug.Log("Mensaje");
-    }
     
-
-    //AAAA
+    // Función que conduce a la escena de gameover.
     public void GameOver()
     {
         if (livesCounter <= 0)
@@ -256,7 +275,7 @@ public class GameManager : MonoBehaviour
         
     }
 
-     //AAA
+     // Función que conduce a la escena de victoria.
      public void Victory()
     {
         if (objectivesCounter >= maxObjectives)

@@ -11,7 +11,7 @@ public class ImpactBullet : MonoBehaviour
     
 
 
-    // Start is called before the first frame update
+    
     void Start()
     {
         // Funci�n que asigna a la variable "gm" el componente GameManager.
@@ -24,11 +24,6 @@ public class ImpactBullet : MonoBehaviour
 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     // Función que detecta la colisión del objeto con otro. Si, el objeto con el que colisiona, tiene el tag "Player", se ejecuta la funci�n "Substract Lives", restándole una vida al jugador .Si no, solo se destruye el objeto portador del código.
     private void OnTriggerEnter(Collider other)
@@ -46,6 +41,7 @@ public class ImpactBullet : MonoBehaviour
         
     }
 
+    // Corrutina que hace destruir al objeto al terminar.
     private IEnumerator AttackDestroyItself()
     {
        yield return new WaitForSeconds(2);

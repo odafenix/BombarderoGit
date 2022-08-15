@@ -15,11 +15,13 @@ public class EnemyAttack : MonoBehaviour
 
     public float playerDistance;
     public float visionRange;
+    PlayerMovement pm;
 
     
     void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        pm = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
     }
 
     
@@ -47,6 +49,8 @@ public class EnemyAttack : MonoBehaviour
         // Funci�n para que la torreta siga la posici�n del jugador.
         transform.LookAt(target);
 
+        isShopOpen();
+
 
     }
 
@@ -72,5 +76,19 @@ public class EnemyAttack : MonoBehaviour
 
         yield break;
 
+    }
+
+    // Función que habilita/deshabilita el rango de disparo si la tienda esta abierta/cerrada.
+    public void isShopOpen()
+    {
+        if(pm.constantMoving == true)
+        {
+           visionRange = 6;
+        }
+
+        else
+        {
+            visionRange = 0;
+        }
     }
 }

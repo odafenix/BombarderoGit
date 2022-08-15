@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class GameSceneManager : Singleton<GameSceneManager>
 {
+    // Funciones para acceder a distintas escenas.
     public void Credits()
     {
         SceneManager.LoadScene("Credits");
@@ -18,6 +19,7 @@ public class GameSceneManager : Singleton<GameSceneManager>
         SceneManager.LoadScene("Gameplay");
     }
 
+    // Función que nos permite salir del juego.
     public void ExitGame()
     {
       Application.Quit();

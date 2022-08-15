@@ -4,32 +4,28 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
+    // Variables AudioSource
     public AudioSource sourceBuy;
-    public AudioSource sourceChangeBomb;
     public AudioSource sourceDash;    
     public AudioSource sourcePlayerAttack;
     public AudioSource sourcePlayerDamage;
     
 
+    // Variables AudioClip
     public AudioClip clipBuy;
-    public AudioClip clipChangeBomb;
     public AudioClip clipDash;    
     public AudioClip clipPlayerAttack;
     public AudioClip clipPlayerDamage;
     
 
+    // Variable que permite modificar el pitch.
     public Vector2 pitchRange;
 
+    // Funciones para reproducir SFX.
     public void PlayBuy()
     {
         sourceBuy.clip = clipBuy;
         sourceBuy.Play();
-    }
-
-    public void PlayChangeBomb() //FALTAAAAAAAAAA
-    {
-        sourceChangeBomb.clip = clipChangeBomb;
-        sourceChangeBomb.Play();
     }
 
     public void PlayDash()

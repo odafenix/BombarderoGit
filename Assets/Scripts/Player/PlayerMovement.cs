@@ -11,20 +11,21 @@ public class PlayerMovement : MonoBehaviour
     public float shipVelocity; // Variable que nos permite modificar la velocidad en que se mueve el jugador.
     public float rotationSpeed; // Variable que contiene la velocidad de rotación del jugador.
     public float dashVelocity; // Variable que contiene la velocidad de Dash del jugador.
-    private float currentShipVelocity;
-    public float dashCooldown;
+    private float currentShipVelocity; // Variable que contiene la velocidad actual del jugador.
+    public float dashCooldown; // Variable que contiene el tiempo de cooldown del Dash.
     public bool isDashOnCooldown;
     [Header ("Player's References")]
     public Rigidbody rbShip; // Variable que contiene el Rigidbody del jugador.
     public GameObject player; // Variable que contiene el GameObject del jugador.
-    public GameObject Trails01;
-    public GameObject Trails02;
-    public GameObject TurboTrails01;
-    public GameObject TurboTrails02;
+    public GameObject Trails01; // Variable que contiene el trail.
+    public GameObject Trails02; // Variable que contiene el trail.
+    public GameObject TurboTrails01; // Variable que contiene el trail.
+    public GameObject TurboTrails02; // Variable que contiene el trail.
     [Header ("GameManager")]
-    public GameManager gm;
+    public GameManager gm; // Variable que nos permite acceder a la clase GameManager.
     public AudioManager am; // Variable que nos permite acceder a la clase AudioManager.
 
+    
     void Start()
     {
         currentShipVelocity = shipVelocity;
@@ -89,24 +90,22 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    // Funcipon que activa y desactiva los trails turbo.
     public void DashTrails()
     {
        if(isDashing)
        {
-          //Trails01.SetActive(false);
-          //Trails02.SetActive(false);
           TurboTrails01.SetActive(true);
           TurboTrails02.SetActive(true);
        }
        if(!isDashing)
        {
-          //Trails01.SetActive(true);
-          //Trails02.SetActive(true);
           TurboTrails01.SetActive(false);
           TurboTrails02.SetActive(false);
        }
     }
 
+    // Corrutina que contiene los elementos del Dash.
     private IEnumerator DashCoroutine()
     {
         isDashing = true;
@@ -129,6 +128,7 @@ public class PlayerMovement : MonoBehaviour
         isDashing = false;
     }
 
+    // Corrutina que define el cooldown del Dash
     private IEnumerator DashCooldown()
     {
        isDashOnCooldown = true;
@@ -138,6 +138,7 @@ public class PlayerMovement : MonoBehaviour
        isDashOnCooldown = false;
     }
 
+    // Muerte del player por salir del mapa.
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Killzone")

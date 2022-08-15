@@ -4,6 +4,7 @@ namespace UnityGamingServices
 {
     public partial class AnalyticsManager
     {
+        // Funciones que registran Analiticas.
         public static void RegistrarNavegacion(string nombreEscena)
         {
             Dictionary<string, object> parametros = new Dictionary<string,object>();

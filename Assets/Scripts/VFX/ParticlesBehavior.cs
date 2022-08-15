@@ -4,18 +4,15 @@ using UnityEngine;
 
 public class ParticlesBehavior : MonoBehaviour
 {
-    // Start is called before the first frame update
+    
     void Start()
     {
+       // Inicio de la corrutina de destruir particulas.
        StartCoroutine(DestroyParticles()); 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
+    // Corrutina que destruye las particulas.
     private IEnumerator DestroyParticles()
     {
        yield return new WaitForSeconds(2);

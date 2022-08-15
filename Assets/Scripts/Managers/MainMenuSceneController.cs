@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MainMenuSceneController : MonoBehaviour
 {
+    // Funciones que acceden a GameSceneManager.
     public void GoToCreditsScreen()
     {
         GameSceneManager.Instance.Credits();

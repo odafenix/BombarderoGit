@@ -2,8 +2,7 @@ namespace UnityGamingServices
 {
     public static class RemoteSettingsConstants
     {
-        // public const string GameOverTitle = "gameOverTitle";
-        // public const string LevelCompleteTitle = "levelCompleteTitle";
+        // Variables RemoteConfig.
         public const string MaxLives = "maxLives";
         public const string CurrentLives = "currentLives";
         public const string MaxAmmo = "maxAmmo";

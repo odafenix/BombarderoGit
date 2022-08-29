@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Audio;
+using UnityGamingServices;
 
-public class OptionsAudio : MonoBehaviour
+public class OptionsAudio : SimpleSingleton<OptionsAudio>
 {
     // Usando referencias de:
     // https://www.youtube.com/watch?v=pbuJUaO-wpY&ab_channel=KapKoder
@@ -15,29 +16,10 @@ public class OptionsAudio : MonoBehaviour
     const string MIXER_MUSIC = "MusicVolume";
     const string MIXER_SFX = "SfxVolume";
 
-    public static OptionsAudio instance;
-
-    
-
     private void Awake()
     {
         musicSlider.onValueChanged.AddListener(SetMusicVolume);
         sfxSlider.onValueChanged.AddListener(SetSfxVolume);
-
-
-        if (instance == null)
-        {
-            instance = this;
-
-            DontDestroyOnLoad(gameObject);
-                       
-        }
-
-        else
-        {
-            Destroy(gameObject);
-        }
-
     }
 
     void SetMusicVolume(float value)
@@ -49,6 +31,4 @@ public class OptionsAudio : MonoBehaviour
     {
         mixer.SetFloat(MIXER_SFX, Mathf.Log10(value) * 20);
     }
-           
-
 }

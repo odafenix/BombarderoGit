@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityGamingServices;
 
-public class AudioManager : MonoBehaviour
+public class AudioManager : SimpleSingleton<AudioManager>
 {
     // Variables AudioSource
     public AudioSource sourceBuy;

@@ -21,10 +21,9 @@ public class EnemyAttack : MonoBehaviour
     void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
-        pm = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerMovement>();
+        pm = target.GetComponent<PlayerMovement>();
     }
 
-    
     void Update()
     {
         //Que dispare al player cuando est� en su rango de visi�n
